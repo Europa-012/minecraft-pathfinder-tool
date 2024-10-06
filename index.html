@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Pathfinder Tool</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Minecraft Pathfinder Tool</h1>
+  </header>
+  
+  <fieldset>
+    <legend>Enter coordinates of 2 points from a straight line:</legend>
+    
+    <!-- START: inputs -->
+    <div class="form">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th colspan="3" id="ColCoordinates">Coordinates</th>
+          </tr>
+          <tr>
+            <td></td>
+            <th id="ColX">X</th>
+            <th id="ColY">Y</th>
+            <th id="ColZ">Z</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- point A [x,y,z]-->
+            <th scope="row" id="point-A">Point A</th>
+            <td><input type="number" name="point-A-X-coordinate" id="point-A-X-coordinate" aria-labelledby="ColCoordinates ColX point-A" required></td>
+            <td><input type="number" name="point-A-Y-coordinate" id="point-A-Y-coordinate" aria-labelledby="ColCoordinates ColY point-A" required></td>
+            <td><input type="number" name="point-A-Z-coordinate" id="point-A-Z-coordinate" aria-labelledby="ColCoordinates ColZ point-A" required></td>
+          </tr>
+          <tr>
+            <!-- point B [x,y,z]-->
+            <th scope="row" id="point-B">Point B</th>
+            <td><input type="number" name="point-B-X-coordinate" id="point-B-X-coordinate" aria-labelledby="ColCoordinates ColX point-B" required></td>
+            <td><input type="number" name="point-B-Y-coordinate" id="point-B-Y-coordinate" aria-labelledby="ColCoordinates ColY point-B" required></td>
+            <td><input type="number" name="point-B-Z-coordinate" id="point-B-Z-coordinate" aria-labelledby="ColCoordinates ColZ point-B" required></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Given Axis</th>
+            <td>
+              <!-- dropdown for given axis -->
+              <select name="axis-list" id="axis-list">
+                <option value="x">X</option>
+                <option value="y" selected>Y</option>
+                <option value="z">Z</option>
+              </select>
+            </td>
+            <!-- given coordinate -->
+            <td><input type="number" name="given-coord" id="given-coord" aria-labelledby="ColCoordinates ColZ point-B" required></td>
+            <!-- <td><button onclick="calculate3rdPoint()">Submit</button></td> -->
+          </tr>
+        </tfoot>
+      </table>
+      <!-- <button onclick="calculate3rdPoint()">Submit</button> -->
+      <input type="submit" onclick="calculate3rdPoint()">
+    </div>
+    <!-- END: inputs -->
+    <div id="output" class="output"></div>
+  </fieldset>
+  <script src="js/script.js"></script>
+</body>
+</html>
